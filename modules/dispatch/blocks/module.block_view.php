@@ -2,19 +2,25 @@
 
 /**
  * @Project NUKEVIET 4.x
- * @Author VINADES.,JSC (contact@vinades.vn)
+ * @Author VINADES.,JSC <contact@vinades.vn>
  * @Copyright (C) 2014 VINADES., JSC. All rights reserved
  * @License GNU/GPL version 2 or any later version
  * @Createdate 3/9/2010 23:25
  */
 
-if (!defined('NV_IS_MOD_CONGVAN')) die('Stop!!!');
+if (!defined('NV_IS_MOD_CONGVAN'))
+    die('Stop!!!');
 
 if (!nv_function_exists('nv_dispathch_view')) {
-
+    /**
+     * nv_dispathch_view()
+     *
+     * @param mixed $block_config
+     * @return
+     */
     function nv_dispathch_view($block_config)
     {
-        global $module_data, $module_name, $module_file, $global_array_cat, $lang_module, $my_head, $db, $module_info;
+        global $module_data, $module_name, $lang_module, $db, $module_info;
 
         $xtpl = new XTemplate("block_hits.tpl", NV_ROOTDIR . "/themes/" . $module_info['template'] . "/modules/" . $module_info['module_theme']);
         $xtpl->assign('BASESITE', NV_BASE_SITEURL);
